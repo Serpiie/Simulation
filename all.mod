@@ -20,7 +20,7 @@ CASE 5: holdItem()
 
 CASE 6: weightObject()
 
-CASE 7: holdItem()
+!CASE 7: holdItem()
 
 CASE 8: moveToDone()
 
@@ -32,7 +32,45 @@ ENDTEST
 
 ENDPROC
 
+PROC moveToItems()
 
+ENDPROC
+
+PROC selectItem()
+
+ENDPROC
+
+PROC pickUpItem()
+
+ENDPROC
+
+PROC scanCode()
+
+ENDPROC
+
+PROC moveToWeights()
+
+ENDPROC
+ 
+PROC holdItem()
+
+ENDPROC
+
+PROC weightObject()
+
+ENDPROC
+
+PROC moveToDone()
+
+ENDPROC
+
+PROC moveToBroken()
+
+ENDPROC
+
+PROC moveToStart()
+
+ENDPROC
 
 
 ! funkcijas un proceduras
@@ -41,8 +79,5 @@ FUNC num randomness ()
     RETURN x;
 ENDFUNC
     
-
-
-
 
 ENDMODULE
