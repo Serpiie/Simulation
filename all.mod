@@ -33,15 +33,13 @@ CASE 3: scanCode()
 
 CASE 4: moveToWeights()
 
-CASE 5: holdItem()
+CASE 5: weightObject()
 
-CASE 6: weightObject()
+CASE 6: holdItem()
 
-!CASE 7: holdItem()
+CASE 7: moveToDone()
 
-CASE 8: moveToDone()
-
-CASE 9: moveToBroken()
+CASE 8: moveToBroken()
 
 DEFAULT: moveToStart(); task := -1
 
@@ -53,7 +51,7 @@ PROC moveToItems()
 
     !MoveL Offs(t,0,0,Z_nobide_virs),v100,z0,SuctionTool\WObj:=wobj0;
     
-    !wait for next task
+    
 ENDPROC
 
 PROC selectItem()
@@ -61,7 +59,7 @@ PROC selectItem()
     !select coordinates of object
     !MoveL Offs(t,0,0,Z_nobide_virs),v100,z0,SuctionTool\WObj:=wobj0;
 
-    !wait for next task
+   
 
 ENDPROC
 
