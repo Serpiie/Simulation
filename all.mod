@@ -1,25 +1,12 @@
+MODULE state
 MODULE ALL
 
 PERS tooldata SuctionTool:=[TRUE,[[0,0,160],[1,0,0,0]],[1,[0,0,1],[1,0,0,0],0,0,0]];
-
-VAR num DarbaLaiks:=0;
-VAR intnum timeint;
-PERS bool Start:=FALSE;
-PERS string Status:="busy";
-PERS num UzdevumaNumurs:=0;
-PERS num CikluSkaits:=0;
-PERS num DarbibuSkaits:=28;
-PERS num UzdevumaLaiks:=0;    
-CONST intnum Z_nobide_virs:= 150;
-VAR intnum k_OK_skait:= 1;
-VAR intnum k_NOK_skait:= 1;
 PERS wobjdata Stends:=[FALSE,TRUE,"",[[0,0,0],[1,0,0,0]],[[0,0,0],[1,0,0,0]]];
-
-
 
 PROC main()
 
-task := N
+task := state.taskNumber()
 
 TEST task
 
@@ -65,7 +52,7 @@ ENDPROC
 
 PROC pickUpItem()
 
-    enableSuctioncup()
+    state.enableSuctioncup()
 
     !lift Item
     !MoveL Offs(t,0,0,Z_nobide_virs),v100,z0,SuctionTool\WObj:=wobj0;
@@ -80,7 +67,6 @@ PROC scanCode()
 
     !MoveL Offs(t,0,0,Z_nobide_virs),v100,z0,SuctionTool\WObj:=wobj0;
 
-    
 
 
 ENDPROC
@@ -96,7 +82,7 @@ ENDPROC
 
 PROC weightObject()
 
-    disableSuctioncup()
+    state.disableSuctioncup()
     !MoveL Offs(t,0,0,Z_nobide_virs),v100,z0,SuctionTool\WObj:=wobj0;
     
     
@@ -105,7 +91,7 @@ ENDPROC
 PROC holdItem()
 
     !MoveL Offs(t,0,0,Z_nobide_virs),v100,z0,SuctionTool\WObj:=wobj0;
-    enableSuctioncup()
+    state.enableSuctioncup()
 
     !MoveL Offs(t,0,0,Z_nobide_virs),v100,z0,SuctionTool\WObj:=wobj0;
     
@@ -116,7 +102,7 @@ ENDPROC
 PROC moveToDone()
 
     !MoveL Offs(t,0,0,Z_nobide_virs),v100,z0,SuctionTool\WObj:=wobj0;
-    disableSuctioncup()
+    state.disableSuctioncup()
 
 
 ENDPROC
@@ -124,7 +110,7 @@ ENDPROC
 PROC moveToBroken()
 
     !MoveL Offs(t,0,0,Z_nobide_virs),v100,z0,SuctionTool\WObj:=wobj0;
-    disableSuctioncup()
+    state.disableSuctioncup()
 
 ENDPROC
 
